@@ -1,12 +1,17 @@
 import './App.css';
-import Cardwidget from './components/Cardwidget/Cardwidget';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 
 const App = () => {
   return (
     <>
       <Header/>
-      <Cardwidget/>
+      <ItemListContainer saludo = "Bienvenidos a nuestra tienda Online"/>
+      <Main/>
     </>
   );
 }
