@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import { getProducts } from '../../mock/products';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({saludo}) => {
+  
+  const [items, setItems] = useState([]);
+
+  useEffect(() =>{
+    
+    getProducts()
+      .then((res)=>{
+        setItems(res);
+      })
+      .catch((error)=>{
+        console.log('rej', error);
+      })
+  },[]);
+  
   return (
-    <p className='itemlistcontainer'>Hola! {saludo}</p>
+    <div id ="container">
+        <ItemList items={items}/>
+    </div>
   )
 }
 
